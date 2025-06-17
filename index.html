@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/public/css/index.css">
+    <link rel="stylesheet" href="/public/css/entrar.css">
+    <link rel="stylesheet" href="/public/css/modal.css">
+    <title>Contro C</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-code"></i>
+            <h1 id="txtLogo">ControC</h1>
+        </div>
+
+        <nav>
+            <!-- <input type="search" id="pesquisar" placeholder="Pesquisar" /> -->
+
+            <div class="entrarCadastrar">
+                <button id="entrar">Entrar</button>
+                <a href="/public/html/cadastro.html"><button id="cadastrar">Cadastrar</button></a>
+            </div>
+        </nav>
+
+        <!--modal fazer login-->
+        <div id="modalLogin" class="modal">
+
+            <div class="modalLoginConteudo">
+                <div class="fecharBtn">
+                    <i class="fa-solid fa-code" id="iconeCodigo"></i>
+                    <span class="fecharEntrar">&times;</span>
+                </div>
+                <h2 id="txtEntrar">ControC</h2>
+
+                <div class="menuDadosEntrar">
+                    <div class="dadosNome">
+                        <label for="nomeUsuario">E-mail:</label>
+                        <div>
+                            <input type="email" id="nomeUsuario" />
+                            <i class="fa-solid fa-user" id="iconeNome"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="dadosSenha">
+                        <label for="senhaUsuario">Senha:</label>
+                        <div>
+                            <input type="password" id="senhaUsuario" />
+                            <i class="fa-solid fa-lock" id="iconeSenha"></i>
+                        </div>
+
+                        <div class="redefinirSenha">
+                            <h2 id="txtEsqueceuSenha">Esqueceu a senha?</h2>
+                            <a href="#" id="cliqueAqui">Clique aqui!</a>
+                        </div>
+                    </div>
+
+                    <div class="btnEntrarUsuario">
+                        <button type="submit" id="fazerLogin">Entrar</button>
+                    </div>
+
+                    <div class="naoEMembroCadastrar">
+                        <h2 id="txtEsqueceuSenha">Não é Membro?</h2>
+                        <a href="/public/html/cadastro.html" id="cliqueAqui">Cadastre-se!</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+        <div class="menu">
+
+            <a href="/index.html"><button id="publicacoes">Publicações</button></a>
+            <button id="favoritos" style="display: none;">Área Dev</button>
+            <button id="addPublicao" style="display: none;">Add Projeto</button>
+
+
+            <!--modal add publicacao -->
+
+            <div id="modalADDPublicao" class="modalPublicao">
+                <div class="modalAdd">
+                    <div class="fecharBtn">
+                        <i class="fa-solid fa-code" id="iconeCodigo"></i>
+                        <span class="fecharEntrarPublicao">&times;</span>
+                    </div>
+                    <div class="formularioPostagem">
+                        <h1>ADD Projeto</h1>
+                        <!-- Título do projeto -->
+                        <div class="conteudoTituloPost">
+                            <label for="txtTituloPost">Título do Projeto:</label>
+                            <input type="text" id="txtTituloPost" placeholder="Ex: Validador de CPF com JavaScript">
+                        </div>
+
+                        <!-- Descrição -->
+                        <div class="conteudoDescricaoPost">
+                            <label for="txtDescricaoPost">Descrição:</label>
+                            <textarea id="txtDescricaoPost" rows="4"
+                                placeholder="Descreva o que o projeto faz, para que serve, etc."></textarea>
+                        </div>
+
+                        <!-- Código -->
+                        <div class="conteudoCodigoPost">
+                            <label for="txtCodigoPost">Código (HTML, JS, etc):</label>
+                            <textarea id="txtCodigoPost" rows="8"
+                                placeholder="Cole aqui seu código ou snippet"></textarea>
+                        </div>
+
+                        <!-- GitHub -->
+                        <div class="conteudoLinkPost">
+                            <label for="txtGithubPost">Link do GitHub:</label>
+                            <input type="url" id="txtGithubPost"
+                                placeholder="https://github.com/seu-usuario/seu-repositorio">
+                        </div>
+
+                        <!-- Botão de envio -->
+                        <div class="btnEnviarPost">
+                            <button id="btnPostar">Postar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="publicacoesPost" id="listaPublicacoes">
+            <!-- Publicações serão carregadas aqui -->
+        </section>
+        
+
+    </main>
+
+    <script type="module" src="/public/js/index.js"></script>
+    <script type="module" src="/app/auth.js"></script>
+    <script type="module" src="/app/firebase-config.js"></script>
+</body>
+
+</html>

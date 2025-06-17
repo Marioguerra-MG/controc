@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+body{
+    width: 100%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
+    margin-top: 90px;
+}
+
+#txtLogo {
+    font-size: 50px;
+    color: rgb(0, 0, 0);
+    font-weight: 100;
+}
+
+#logoIconeCadastro{
+    font-size: 50px;
+    color: rgb(153, 153, 153);
+}
+
+main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+    height: 400px;
+}
+
+
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.dadosContudo{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 5px;
+}
+
+.dadosContudo label{
+    font-size: 18px;
+}
+
+.dadosContudo input{
+    width: 300px;
+    height: 30px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #25292e;
+}
+
+.cadastrar{
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    
+}
+
+#btnCadastrarUsuario{
+    width: 300px;
+    height: 40px;
+    font-size: 15px;
+    background-color: #25292e;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+#btnCadastrarUsuario:hover{
+    background-color: #0e0f0f;
+}
+
+#btnVoltarUsuario{
+    width: 300px;
+    height: 40px;
+    font-size: 15px;
+    background-color: #25292e;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+#btnVoltarUsuario:hover{
+    background-color: #0e0f0f;
+}
+
+
+
+
+
+
+

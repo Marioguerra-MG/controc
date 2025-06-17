@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ------ Modal Login ------*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-family: "Poppins", sans-serif;
+}
+
+/* Conteúdo central do modal */
+.modalLoginConteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  margin: 5% auto;
+  padding: 2rem;
+  width: 400px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease;
+}
+
+  
+  /* Botão de fechar */
+  .fecharBtn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Entrar título */
+  #txtEntrar {
+    font-size: 2rem;
+    color: #25292e;
+    font-weight: 500;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Formulário */
+  .menuDadosEntrar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+  }
+  
+  .dadosNome,
+  .dadosSenha {
+    width: 100%;
+  }
+  
+  .dadosNome label,
+  .dadosSenha label {
+    font-size: 0.95rem;
+    color: #333;
+    margin-bottom: 0.3rem;
+  }
+  
+  #nomeUsuario,
+  #senhaUsuario {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #999;
+    outline: none;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    color: #25292e;
+    background: transparent;
+  }
+  
+  /* Botão de login com mesma largura dos inputs */
+  .btnEntrarUsuario {
+    margin-top: 2rem;
+    width: 100%;
+  }
+  
+  #fazerLogin {
+    width: 100%;
+    height: 42px;
+    font-size: 1rem;
+    background-color: #25292e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  #fazerLogin:hover {
+    background-color: #16171a;
+  }
+  
+  /* Redefinir senha */
+  .redefinirSenha {
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.8rem;
+    gap: 5px;
+  }
+  
+  #txtEsqueceuSenha,
+  #cliqueAqui {
+    color: #0969da;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  #cliqueAqui:hover {
+    text-decoration: underline;
+  }
+  
+  /* Cadastro */
+  .naoEMembroCadastrar {
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: #333;
+  }
+  
+  .naoEMembroCadastrar span {
+    margin-left: 5px;
+    color: #0969da;
+    cursor: pointer;
+  }
+  
+  .naoEMembroCadastrar span:hover {
+    text-decoration: underline;
+  }
+  
+  /* Animação */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

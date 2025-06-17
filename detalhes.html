@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Detalhes do Projeto</title>
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/public/css/detalhes.css">
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+</head>
+<body>
+  <div id="detalhesProjeto"></div>
+
+  <script type="module">
+    import { db } from "./app/firebase-config.js";
+    import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+    // Função para escapar código
+    function escapeHTML(str) {
+      return str
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    // Pega o ID da URL
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+
+    const container = document.getElementById("detalhesProjeto");
+
+    if (id) {
+      const docRef = doc(db, "projetos", id);
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        const data = docSnap.data();
+        const codigoEscapado = escapeHTML(data.codigo);
+
+        container.innerHTML = `
+          <h2>${data.titulo}</h2>
+          <p><strong>Descrição:</strong> ${data.descricao}</p>
+          <pre><code class="language-js">${codigoEscapado}</code></pre>
+          <p><a href="${data.github}" target="_blank">Ver no GitHub</a></p>
+        `;
+
+        Prism.highlightElement(container.querySelector("code"));
+      } else {
+        container.innerHTML = "<p>Projeto não encontrado.</p>";
+      }
+    } else {
+      container.innerHTML = "<p>ID não informado.</p>";
+    }
+  </script>
+</body>
+</html>

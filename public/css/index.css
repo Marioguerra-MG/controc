@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+}
+
+/* Header */
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #25292e;
+  height: 60px;
+  color: white;
+  padding: 0 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#txtLogo {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Search Input */
+#pesquisar {
+  width: 300px;
+  height: 35px;
+  padding: 0 15px;
+  border: 1px solid #777;
+  border-radius: 4px;
+  font-size: 16px;
+  background: none;
+  color: white;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+#pesquisar:hover {
+  border-color: white;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Buttons */
+#entrar, #cadastrar, #btnSair {
+  background: none;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: 14px;
+}
+
+#btnSair {
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 6px 12px;
+}
+
+#entrar:hover, #cadastrar:hover, #btnSair:hover {
+  color: rgb(213, 213, 250);
+}
+
+#btnSair:hover {
+  border-color: rgb(213, 213, 250);
+}
+
+/* Main */
+main {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.menu button {
+  width: 150px;
+  padding: 10px;
+  border: 1px solid #c4c4c4;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.menu button:hover {
+  background-color: rgb(213, 213, 250);
+}
+
+/* Publicações */
+.publicacoesPost {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  background-color: #f6f8fa;
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.publicacao {
+  background-color: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 0.5rem;
+  box-shadow: 0 1px 2px rgba(27, 31, 35, 0.05);
+  transition: box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.publicacao:hover {
+  box-shadow: 0 4px 12px rgba(27, 31, 35, 0.15);
+}
+
+.publicacao h3 {
+  font-size: 20px;
+  font-weight: 400;
+  color: #0969da;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.publicacao p {
+  flex: 1;
+  color: #24292f;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.publicacao pre {
+  background-color: #f6f8fa;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 0.75rem;
+  overflow-x: auto;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
+  max-height: 50px;
+}
+
+.publicacao a {
+  margin-top: 0.75rem;
+  color: #0969da;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.publicacao a:hover {
+  text-decoration: underline;
+}
+
+.conteudoEscluir{
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+.btnExcluir{
+  display: flex;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #pesquisar {
+    width: 100%;
+  }
+
+  .menu {
+    flex-direction: column;
+  }
+
+  .menu button {
+    width: 100%;
+  }
+
+  .publicacoesPost {
+    padding: 1rem;
+  }
+}
