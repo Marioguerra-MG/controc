@@ -206,7 +206,7 @@ async function carregarPublicacoes() {
     const codigoEscapado = escapeHTML(data.codigo);
 
     card.innerHTML = `
-      <h3><a href="detalhes.html?id=${doc.id}">${data.titulo}</a></h3>
+      <h3><a href="/html/detalhes.html?id=${doc.id}">${data.titulo}</a></h3>
       <p> ${data.descricao}</p>
       
     `;
@@ -244,7 +244,7 @@ btnFavoritos.addEventListener("click", async () => {
       const data = docSnap.data();
       const html = `
         <div class="publicacao" data-id="${docSnap.id}">
-          <h3><a href="detalhes.html?id=${docSnap.id}">${data.titulo}</a></h3>
+          <h3><a href="/html/detalhes.html?id=${docSnap.id}">${data.titulo}</a></h3>
           <p><strong>Descrição:</strong> ${data.descricao}</p>
           <div class="conteudoEscluir">
             <button class="btnExcluir">🗑️ Excluir</button>
