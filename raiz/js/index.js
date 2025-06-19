@@ -105,13 +105,16 @@ onAuthStateChanged(auth, (user) => {
   const btnAddPublicao = document.getElementById("addPublicao");
 
   if (user) {
+    document.getElementById("menuUsuario").style.display = "inline-block";
     btnEntrar && (btnEntrar.style.display = "none");
     btnCadastrar && (btnCadastrar.style.display = "none");
     btnLogout.style.display = "inline-block";
+    
 
     btnFavoritos && (btnFavoritos.style.display = "inline-block");
     btnAddPublicao && (btnAddPublicao.style.display = "inline-block");
   } else {
+    document.getElementById("menuUsuario").style.display = "none";
     btnEntrar && (btnEntrar.style.display = "inline-block");
     btnCadastrar && (btnCadastrar.style.display = "inline-block");
     btnLogout.style.display = "none";
@@ -121,21 +124,38 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-// ============================================
+// ============================================ 
 // 🔓 Logout
 // ============================================
+const menuUsuario = document.getElementById("menuUsuario");
+const btnMenu = document.getElementById("btnMenu");
+const opcoesMenu = document.getElementById("opcoesMenu");
+const btnLogout = document.getElementById("btnSair");
+const verFavoritos = document.getElementById("verFavoritos");
 
-const btnLogout = document.createElement("button");
-btnLogout.id = "btnSair";
-btnLogout.textContent = "Sair";
-btnLogout.style.display = "none";
+// Mostrar ou esconder menu ao clicar no botão
+btnMenu.onclick = () => {
+  opcoesMenu.style.display = opcoesMenu.style.display === "block" ? "none" : "block";
+};
+
+// Ação de sair
 btnLogout.onclick = () => {
   signOut(auth).then(() => {
     alert("Você saiu da conta.");
     location.reload();
   });
 };
-document.querySelector(".entrarCadastrar")?.appendChild(btnLogout);
+
+
+// Fechar menu ao clicar fora
+window.addEventListener("click", (event) => {
+  if (!menuUsuario.contains(event.target)) {
+    opcoesMenu.style.display = "none";
+  }
+});
+
+
+
 
 // ============================================
 // 📦 Publicações - Postar, Listar, Favoritos

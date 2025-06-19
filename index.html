@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/raiz/css/index.css">
     <link rel="stylesheet" href="/raiz/css/entrar.css">
     <link rel="stylesheet" href="/raiz/css/modal.css">
+    <link rel="stylesheet" href="/raiz/css/menuOpcoes.css">
     <title>Contro C</title>
 </head>
 
@@ -75,14 +76,30 @@
             </div>
         </div>
 
+
+        <div id="menuUsuario" class="menu-usuario" style="display: none;">
+            <button id="btnMenu" class="menu-toggle">☰</button>
+            <div id="opcoesMenu" class="menu-opcoes">
+              <button id="verFavoritos">Area Dev</button>
+              <a href="/index.html"><button id="publicacoes">Publicações</button></a>
+              <button id="favoritos" style="display: none">Área Dev</button>
+              <button id="addPublicao" style="display: none;">Add Projeto</button>
+              <button id="btnSair">Sair</button>
+            </div>
+          </div>
+          
+
     </header>
 
     <main>
         <div class="menu">
-
+            
+            <h3 id="publicacoes">Publicações</h3>
+            <!--
             <a href="/index.html"><button id="publicacoes">Publicações</button></a>
-            <button id="favoritos" style="display: none;">Área Dev</button>
+            <button id="favoritos" style="display: block;">Área Dev</button>
             <button id="addPublicao" style="display: none;">Add Projeto</button>
+            -->
 
 
             <!--modal add publicacao -->
